@@ -5,6 +5,7 @@ import HomeView from './views/HomeView'
 import LoginView from './views/LoginView'
 import SearchView from './views/SearchView'
 import SearchResultsView from './views/SearchResultsView'
+import TrialDetailsView from './views/TrialDetailsView'
 
 const app = function() {
 
