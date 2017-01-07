@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import Backbone from 'backbone'
 import HomeView from './views/HomeView'
+import LoginView from './views/LoginView'
 
 const app = function() {
 
