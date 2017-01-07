@@ -21,6 +21,9 @@ class SearchBody extends React.Component {
                 <input type = 'text' placeholder = 'Cancer Type' />
                 <input type = 'text' placeholder = 'Cancer Stage' />
                 <input type = 'number' placeholder = 'Your age' />
+                <p>Location:</p>
+                <input type = 'text' placeholder = 'City'/>
+                <input type = 'text' placeholder = 'State'/>
                 <p>Gender:</p>
                 <input type = 'radio' name = 'gender' value = 'female' />Female
                 <input type = 'radio' name = 'gender' value = 'male' />Male
