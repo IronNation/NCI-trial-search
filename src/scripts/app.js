@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import Backbone from 'backbone'
 import HomeView from './views/HomeView'
 import LoginView from './views/LoginView'
+import SearchView from './views/SearchView'
 
 const app = function() {
 
@@ -24,6 +25,10 @@ const app = function() {
 
         _goToLogin: function() {
             ReactDOM.render(<LoginView />, document.querySelector('.container'))
+        },
+
+        _goToSearch: function() {
+            ReactDOM.render(<SearchView />, document.querySelector('.container'))
         },
 
         _goToSearchResults: function() {
