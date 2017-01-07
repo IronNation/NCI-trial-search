@@ -1,11 +1,10 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Gmaps, Marker, InfoWindow, Circle } from 'react-gmaps';
 import axios from 'axios';
 
-export default class MapPage extends React.Component {
-  constructor(props){
+export default class MapPage extends Component {
+  constructor (props){
     super(props);
-
     this.state = {
       lat: 44.9778,
       lng: -93.273079
@@ -35,18 +34,18 @@ export default class MapPage extends React.Component {
       console.log(newAddress);
     })
 
-    //get city
-    axios.get("https://clinicaltrialsapi.cancer.gov/v1/clinical-trial/NCT02194738/").then((response) => {
-      let newCity = response.data.sites[0].org_city;
-      console.log(newCity);
-    })
+  //get city
+  axios.get('https://clinicaltrialsapi.cancer.gov/v1/clinical-trial/NCT02194738/').then((response) => {
+    let newCity = response.data.sites[0].org_city;
+    console.log(newCity);
+  })
 
-    //get phone
-    axios.get("https://clinicaltrialsapi.cancer.gov/v1/clinical-trial/NCT02194738/").then((response) => {
-      let newPhone = response.data.sites[0].contact_phone;
-      console.log(newPhone);
-    })
-
+  //get phone
+  axios.get('https://clinicaltrialsapi.cancer.gov/v1/clinical-trial/NCT02194738/').then((response) => {
+    let newPhone = response.data.sites[0].contact_phone;
+    console.log(newPhone);
+  })
+  
   onMapCreated(map) {
     map.setOptions({
       disableDefaultUI: true
@@ -77,13 +76,13 @@ export default class MapPage extends React.Component {
         params={{v: '3.exp', key: 'AIzaSyBkCDVgikdzJV_b4grde_7d2l-QyzKZhIs'}}
         onMapCreated={this.onMapCreated}>
         <Marker
-          lat={coords.lat}
-          lng={coords.lng}
+          lat={this.state.lat}
+          lng={this.state.lng}
           draggable={true}
           onDragEnd={this.onDragEnd} />
         <InfoWindow
-          lat={coords.lat}
-          lng={coords.lng}
+          lat={this.state.lat}
+          lng={this.state.lng}
           content={'Hello, React'}
           onCloseClick={this.onCloseClick} />
         {/* <Circle
@@ -95,4 +94,4 @@ export default class MapPage extends React.Component {
     )
   }
 
-});
+}

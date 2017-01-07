@@ -37,14 +37,15 @@
   "author": "magentanova",
   "license": "MIT",
   "devDependencies": {
-    "babel-preset-es2015": "^6.9.0",
-    "babel-preset-react": "^6.5.0",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
     "babelify": "^7.3.0",
     "node-sass": "^3.7.0",
     "uglifyjs": "^2.4.10",
     "watchify": "^3.7.0"
   },
   "dependencies": {
+    "axios": "^0.15.3",
     "backbone": "^1.3.3",
     "body-parser": "^1.15.2",
     "ejs": "^2.4.2",

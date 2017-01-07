@@ -1,6 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import MapPage from './MapContainer'
+// import MapPage from './MapContainer'
+import ResultsList from './ResultsList'
+
 const app = function() {
 
 	const Header = React.createClass({
@@ -11,7 +13,7 @@ const app = function() {
 		}
 	})
 
-	ReactDOM.render(<MapPage/>,document.querySelector('.container'))
+	ReactDOM.render(<ResultsList />,document.querySelector('.container'))
 }
 
 app()
