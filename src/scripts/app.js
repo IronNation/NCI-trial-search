@@ -5,6 +5,8 @@ const app = function() {
 
 	const Header = React.createClass({
 		render: () => {
+			console.log('hello world')
+			return <h1>YOLO</h1>
 
 		}
 	})

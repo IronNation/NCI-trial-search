@@ -1,1 +1,1 @@
-console.error("SyntaxError: /Users/sampellegrene/projects/NCI-trial-search/src/scripts/MapContainer.js: Unexpected token, expected ( (19:7) while parsing file: /Users/sampellegrene/projects/NCI-trial-search/src/scripts/MapContainer.js");
+console.error("SyntaxError: /Users/sampellegrene/projects/NCI-trial-search/src/scripts/MapContainer.js: Unexpected token, expected ( (16:9) while parsing file: /Users/sampellegrene/projects/NCI-trial-search/src/scripts/MapContainer.js");
