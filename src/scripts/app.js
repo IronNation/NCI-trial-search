@@ -43,5 +43,4 @@ var app = function() {
     new AppRouter()
 }
 
-
 app()
