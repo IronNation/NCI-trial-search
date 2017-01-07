@@ -6,6 +6,7 @@ import LoginView from './views/LoginView'
 import SearchView from './views/SearchView'
 import SearchResultsView from './views/SearchResultsView'
 import TrialDetailsView from './views/TrialDetailsView'
+import MyTrialsView from './views/MyTrialsView'
 
 const app = function() {
 
@@ -17,6 +18,7 @@ const app = function() {
             'search': '_goToSearch',
             'searchResults': '_goToSearchResults',
             'trialDetails' : '_goToTrialDetails',
+            'myTrials': '_goToMyTrials',
             '*default': '_goToDefault'
         },
 
@@ -39,6 +41,10 @@ const app = function() {
 
         _goToTrialDetails: function() {
             ReactDOM.render(<TrialDetailsView />, document.querySelector('.container'))
+        },
+
+        _goToMyTrials: function() {
+            ReactDOM.render(<MyTrialsView />, document.querySelector('.container'))
         },
 
         _goToDefault: function() {
