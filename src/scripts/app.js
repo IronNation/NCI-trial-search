@@ -17,7 +17,7 @@ const app = function() {
             'login': '_goToLogin',
             'search': '_goToSearch',
             'searchResults': '_goToSearchResults',
-            'trialDetails' : '_goToTrialDetails',
+            'trialDetails/:id' : '_goToTrialDetails',
             'myTrials': '_goToMyTrials',
             '*default': '_goToDefault'
         },
