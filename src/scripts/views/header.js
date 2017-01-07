@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Header = React.createClass ({
+class Header extends React.Component{
 
-    render: function() {
+    render() {
         return (
             <div className = 'header'>
                 <h1>Welcome to DTST!</h1>
@@ -11,11 +11,11 @@ const Header = React.createClass ({
             </div>
         )
     }
-})
+}
 
-const Navigation = React.createClass({
+class Navigation extends React.Component {
 
-    render: function() {
+    render() {
         return (
             <div className = 'navBar'>
                 <a href = '#home'>Home</a>
@@ -24,6 +24,6 @@ const Navigation = React.createClass({
             </div>
         )
     }
-})
+}
 
 export default Header

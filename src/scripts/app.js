@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import Backbone from 'backbone'
+import HomeView from './views/HomeView'
 
 const app = function() {
 
