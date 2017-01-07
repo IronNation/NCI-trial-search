@@ -4,6 +4,7 @@ import Backbone from 'backbone'
 import HomeView from './views/HomeView'
 import LoginView from './views/LoginView'
 import SearchView from './views/SearchView'
+import SearchResultsView from './views/SearchResultsView'
 
 const app = function() {
 
