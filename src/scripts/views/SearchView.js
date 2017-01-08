@@ -94,8 +94,8 @@ class Trial extends React.Component {
     render() {
         return (
             <div className = 'trial'>
-                <p className = 'titleDetails' onClick = {evt => this._getDetails(evt)}>{this.state.trialModel.brief_title}</p>
-                <p>Description: {this.state.trialModel.brief_description}</p>
+                <h3 className = 'titleDetails' onClick = {evt => this._getDetails(evt)}>{this.state.trialModel.brief_title}</h3>
+                <p>Description: {this.state.trialModel.brief_summary}</p>
                 <p>Principal Investigator: {this.state.trialModel.principal_investigator}</p>
                 <p>Lead Organization: {this.state.trialModel.lead_org}</p>
                 <p>Start Date: {this.state.trialModel.start_date}</p>
