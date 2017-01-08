@@ -1,6 +1,6 @@
 import Header from './header'
 import React from 'react'
-import {ResultsList} from './map'
+import ResultsList from './map'
 
 class HomeView extends React.Component {
 

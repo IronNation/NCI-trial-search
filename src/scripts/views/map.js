@@ -2,7 +2,7 @@ import React, { Component, List } from 'react';
 import axios from 'axios';
 
 
-export default class ResultsList extends Component {
+class ResultsList extends Component {
 
   constructor(props) {
     super();
@@ -31,13 +31,24 @@ export default class ResultsList extends Component {
 
   render() {
     return (
-      <div>Hello
-
-      <List
-          address={this.state.address}
-        />
-
+      <div>
+        <MapList address={this.state.address} />
       </div>
-    );
+    )
   }
 }
+
+class MapList extends Component {
+    constructor(props) {
+        super(props)
+        console.log(props)
+    }
+
+    render() {
+        return (
+            <div>Hello</div>
+        )
+    }
+}
+
+export default ResultsList
