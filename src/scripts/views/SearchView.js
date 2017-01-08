@@ -86,10 +86,15 @@ class Trial extends React.Component {
         console.log(this.state)
     }
 
+    _getDetails(evt){
+        evt.preventDefault()
+        location.hash = 'trialDetails/' + this.state.trialModel.nct_id
+    }
+
     render() {
         return (
             <div className = 'trial'>
-                <a href  = ''>{this.state.trialModel.brief_title}</a>
+                <p className = 'titleDetails' onClick = {evt => this._getDetails(evt)}>{this.state.trialModel.brief_title}</p>
                 <p>Description: {this.state.trialModel.brief_description}</p>
                 <p>Principal Investigator: {this.state.trialModel.principal_investigator}</p>
                 <p>Lead Organization: {this.state.trialModel.lead_org}</p>
