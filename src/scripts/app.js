@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-// import MapPage from './MapContainer'
+import MapPage from './MapContainer'
 import ResultsList from './ResultsList'
 
 const app = function() {

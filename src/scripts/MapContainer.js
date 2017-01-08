@@ -3,95 +3,60 @@ import { Gmaps, Marker, InfoWindow, Circle } from 'react-gmaps';
 import axios from 'axios';
 
 export default class MapPage extends Component {
-  constructor (props){
+  constructor(props) {
     super(props);
+
     this.state = {
-      lat: 44.9778,
-      lng: -93.273079
+      coords:{
+        lat: 51.5258541,
+        lng: -0.08040660000006028
+      }
     }
   }
 
-  //get latitude
+  ComponentDidMount(){
+    getCoords()
+  }
+
+  getCoords(){
     axios.get("https://clinicaltrialsapi.cancer.gov/v1/clinical-trial/NCT02194738/").then((response) => {
-      let newLat = response.data.sites[0].org_coordinates.lat;
-      this.setState({
-        lat: newLat,
-      })
-      console.log(newLat);
+      let newCoords = response.data.sites[0];
+      console.log(newCoords);
+      // this.setState({
+      //   coords: newCoords
+      // })
     })
-  //get longitude
-    axios.get("https://clinicaltrialsapi.cancer.gov/v1/clinical-trial/NCT02194738/").then((response) => {
-      let newLong = response.data.sites[0].org_coordinates.lon;
-      this.setState({
-        lng: newLong,
-      })
-      console.log(newLong);
-    })
-
-    //get address
-    axios.get("https://clinicaltrialsapi.cancer.gov/v1/clinical-trial/NCT02194738/").then((response) => {
-      let newAddress = response.data.sites[0].org_address_line_1;
-      console.log(newAddress);
-    })
-
-  //get city
-  axios.get('https://clinicaltrialsapi.cancer.gov/v1/clinical-trial/NCT02194738/').then((response) => {
-    let newCity = response.data.sites[0].org_city;
-    console.log(newCity);
-  })
-
-  //get phone
-  axios.get('https://clinicaltrialsapi.cancer.gov/v1/clinical-trial/NCT02194738/').then((response) => {
-    let newPhone = response.data.sites[0].contact_phone;
-    console.log(newPhone);
-  })
-  
-  onMapCreated(map) {
-    map.setOptions({
-      disableDefaultUI: true
-    });
-  },
-
-  onDragEnd(e) {
-    console.log('onDragEnd', e);
-  },
-
-  onCloseClick() {
-    console.log('onCloseClick');
-  },
-
-  onClick(e) {
-    console.log('onClick', e);
-  },
+  }
 
   render() {
     return (
-      <Gmaps
-        width={'100vw'}
-        height={'100vh'}
-        lat={this.state.lat}
-        lng={this.state.lng}
+      <div>
+        {/* <Gmaps
+        width={'800px'}
+        height={'600px'}
+        lat={coords.lat}
+        lng={coords.lng}
         zoom={12}
-        loadingMessage={'Be happy'} //Add gif here
-        params={{v: '3.exp', key: 'AIzaSyBkCDVgikdzJV_b4grde_7d2l-QyzKZhIs'}}
+        loadingMessage={'Be happy'}
+        params={{v: '3.exp', key: 'AIzaSyDNXz8v1hT7wB1iJko-cyHe7zb7dD5iX38'}}
         onMapCreated={this.onMapCreated}>
         <Marker
-          lat={this.state.lat}
-          lng={this.state.lng}
+          lat={this.state.coords.lat}
+          lng={this.state.coords.lng}
           draggable={true}
           onDragEnd={this.onDragEnd} />
         <InfoWindow
-          lat={this.state.lat}
-          lng={this.state.lng}
-          content={'Hello, React'}
+          lat={this.state.coords.lat}
+          lng={this.state.coords.lng}
+          content={'Hello, React :)'}
           onCloseClick={this.onCloseClick} />
-        {/* <Circle
+        <Circle
           lat={coords.lat}
           lng={coords.lng}
           radius={500}
-          onClick={this.onClick} /> */}
-      </Gmaps>
-    )
+          onClick={this.onClick} />
+      </Gmaps> */}
+      </div>
+    );
   }
-
 }

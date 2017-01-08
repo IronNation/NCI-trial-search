@@ -1,11 +1,33 @@
-import React, { Component } from 'react';
+import React,{ Component, List } from 'react';
+import axios from 'axios';
 
 export default class ResultsList extends Component {
-  //get address
-  // axios.get('https://clinicaltrialsapi.cancer.gov/v1/clinical-trial/NCT02194738/').then((response) => {
-  //   let newAddress = response.data.sites[0].org_address_line_1;
-  //   console.log(newAddress);
-  // })
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      address:''
+    }
+  }
+
+  ComponentDidMount(){
+    getAddress()
+  }
+
+    // get address
+  getAddress(){
+    axios.get("https://clinicaltrialsapi.cancer.gov/v1/clinical-trial/NCT02194738/").then((response) => {
+      let newAddress = response.data.sites[0].org_address_line_1;
+      console.log(newAddress);
+      this.setState({
+        address: newAddress
+      })
+    })
+    .catch(function (error) {
+      console.log(error);
+    })
+  }
   //
   // //get city
   // axios.get('https://clinicaltrialsapi.cancer.gov/v1/clinical-trial/NCT02194738/').then((response) => {
@@ -21,8 +43,12 @@ export default class ResultsList extends Component {
 
   render() {
     return (
-      <div>
-        MyComponent
+      <div>Hello
+
+      {/* <List
+          address={this.state.address}
+        /> */}
+
       </div>
     );
   }
