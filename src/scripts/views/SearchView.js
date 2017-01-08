@@ -6,6 +6,12 @@ class SearchView extends React.Component {
     constructor(props) {
         super(props)
         console.log('props in SearchView', props)
+
+        this.state = {
+            trials: props.trialColl.models[0].get('trials')
+        }
+
+        console.log(this.state.trials)
     }
 
     render() {
@@ -13,17 +19,13 @@ class SearchView extends React.Component {
             <div className = 'searchView'>
                 <Header />
                 <SearchBody />
+                <SearchResults trial = {this.state.trials}/>
             </div>
         )
     }
 }
 
 class SearchBody extends React.Component {
-
-    constructor(props) {
-        super(props)
-        console.log('props in SearchBody', props)
-    }
 
     render() {
         return (
@@ -38,6 +40,26 @@ class SearchBody extends React.Component {
                 <input type = 'radio' name = 'gender' value = 'female' />Female
                 <input type = 'radio' name = 'gender' value = 'male' />Male
                 <button type = 'submit'>Search</button>
+            </div>
+        )
+    }
+}
+
+class SearchResults extends React.Component {
+
+    constructor(props) {
+        super(props)
+        console.log('searchResults props', props)
+    }
+
+    render() {
+        return (
+            <div className  = 'searchResults'>
+                <a href  = ''>"brief_title"</a>
+                <p>Description: "brief_description"</p>
+                <p>Principal Investigator: "principal_investigator"</p>
+                <p>Lead Organization: "lead_org"</p>
+                <p>Start Date: "start_date"</p>
             </div>
         )
     }
