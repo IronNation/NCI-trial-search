@@ -18,7 +18,7 @@ const app = function() {
             'home': '_goHome',
             'login': '_goToLogin',
             'search': '_goToSearch',
-            'searchResults': '_goToSearchResults',
+            'searchResults/:query': '_doSearch',
             'trialDetails/:id' : '_goToTrialDetails',
             'myTrials': '_goToMyTrials',
             '*default': '_goToDefault'
@@ -33,7 +33,7 @@ const app = function() {
             ReactDOM.render(<LoginView />, document.querySelector('.container'))
         },
 
-        _goToSearch: function() {
+        _goToSearch: function(gender, cancer) {
             const trialColl = new TrialCollection()
 
             trialColl.fetch().then(() => {
@@ -41,8 +41,17 @@ const app = function() {
             })
         },
 
-        _goToSearchResults: function() {
-            ReactDOM.render(<SearchResultsView />, document.querySelector('.container'))
+        _doSearch: function() {
+            const trialColl = new TrialCollection()
+
+            trialColl.fetch({
+                data: {
+                    // eligibility.structured.gender: gender,
+                    _fulltext: cancer
+                }
+            }).then(() => {
+                ReactDOM.render(<SearchView trialColl = {trialColl}/>, document.querySelector('.container'))
+            })
         },
 
         _goToTrialDetails: function(id) {

@@ -5,7 +5,7 @@ class SearchView extends React.Component {
 
     constructor(props) {
         super(props)
-        console.log('props in SearchView', props)
+        // console.log('props in SearchView', props)
 
         this.state = {
             trials: props.trialColl.models[0].get('trials')
@@ -25,10 +25,11 @@ class SearchView extends React.Component {
 
 class SearchBody extends React.Component {
 
+
     render() {
         return (
-            <div className = 'searchBody'>
-                <input type = 'text' placeholder = 'Cancer Type' />
+            <form className = 'searchBody'>
+                <input type = 'text' name = 'cancerType' placeholder = 'Cancer Type' />
                 <input type = 'text' placeholder = 'Cancer Stage' />
                 <input type = 'number' placeholder = 'Your age' />
                 <p>Location:</p>
@@ -38,7 +39,7 @@ class SearchBody extends React.Component {
                 <input type = 'radio' name = 'gender' value = 'female' />Female
                 <input type = 'radio' name = 'gender' value = 'male' />Male
                 <button type = 'submit'>Search</button>
-            </div>
+            </form>
         )
     }
 }
@@ -47,7 +48,7 @@ class SearchResults extends React.Component {
 
     constructor(props) {
         super(props)
-        console.log('searchResults props', props)
+        // console.log('searchResults props', props)
 
         this.state = {
             trialArray: props.trial
@@ -78,12 +79,12 @@ class SearchResults extends React.Component {
 class Trial extends React.Component {
     constructor(props) {
         super(props)
-        console.log('trial props', props)
+        // console.log('trial props', props)
 
         this.state = {
             trialModel: props.trialModel
         }
-        console.log(this.state)
+        // console.log(this.state)
     }
 
     _getDetails(evt){

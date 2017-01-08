@@ -51,6 +51,7 @@ class TrialDetails extends React.Component {
                 <p><b>Title: </b>{this.state.trialModel.get("official_title")}</p>
                 <p><b>Description: </b>{this.state.trialModel.get("detail_description")}</p>
                 {this._getJSXArray(this.state.trialModel.get('sites'))}
+                <hr />
             </div>
         )
     }
