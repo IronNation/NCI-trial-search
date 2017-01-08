@@ -1,13 +1,13 @@
 import Header from './header'
 import React from 'react'
 
-class SearchView extends React.Component {
+class SearchResultsView extends React.Component {
 
     constructor(props) {
         super(props)
-
+        console.log(props)
         this.state = {
-            trials: props.trialColl.models[0].get('trials')
+            trials: props.searchTrialColl.models[0].get('trials')
         }
     }
 
@@ -15,14 +15,14 @@ class SearchView extends React.Component {
         return (
             <div className = 'searchView'>
                 <Header />
-                <SearchBody />
-                <AllResults trial = {this.state.trials}/>
+                <SearchResultsBody />
+                <SearchResults trial = {this.state.trials}/>
             </div>
         )
     }
 }
 
-class SearchBody extends React.Component {
+class SearchResultsBody extends React.Component {
 
     _handleSearch(evt) {
         evt.preventDefault()
@@ -48,7 +48,7 @@ class SearchBody extends React.Component {
     }
 }
 
-class AllResults extends React.Component {
+class SearchResults extends React.Component {
 
     constructor(props) {
         super(props)
@@ -110,4 +110,4 @@ class Trial extends React.Component {
     }
 }
 
-export default SearchView
+export default SearchResultsView
