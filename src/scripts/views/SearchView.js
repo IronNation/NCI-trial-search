@@ -86,8 +86,6 @@ class Trial extends React.Component {
         console.log(this.state)
     }
 
-
-
     render() {
         return (
             <div className = 'trial'>

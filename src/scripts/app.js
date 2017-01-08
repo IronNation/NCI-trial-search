@@ -18,7 +18,7 @@ const app = function() {
             'login': '_goToLogin',
             'search': '_goToSearch',
             'searchResults': '_goToSearchResults',
-            'trialDetails' : '_goToTrialDetails',
+            'trialDetails/:id' : '_goToTrialDetails',
             'myTrials': '_goToMyTrials',
             '*default': '_goToDefault'
         },
@@ -44,8 +44,12 @@ const app = function() {
             ReactDOM.render(<SearchResultsView />, document.querySelector('.container'))
         },
 
-        _goToTrialDetails: function() {
-            ReactDOM.render(<TrialDetailsView />, document.querySelector('.container'))
+        _goToTrialDetails: function(id) {
+            const trialModel = new TrialModel(id)
+
+            trialModel.fetch().then(() => {
+                ReactDOM.render(<TrialDetailsView />, document.querySelector('.container'))
+            })
         },
 
         _goToMyTrials: function() {
