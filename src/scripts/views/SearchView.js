@@ -10,8 +10,6 @@ class SearchView extends React.Component {
         this.state = {
             trials: props.trialColl.models[0].get('trials')
         }
-
-        console.log(this.state.trials)
     }
 
     render() {
@@ -50,16 +48,55 @@ class SearchResults extends React.Component {
     constructor(props) {
         super(props)
         console.log('searchResults props', props)
+
+        this.state = {
+            trialArray: props.trial
+        }
+    }
+
+    _getJSXArray(trialArray) {
+        let newArray = []
+
+        trialArray.forEach( (trial) => {
+            newArray.push(<Trial trialModel = {trial} />
+            )
+        })
+        return newArray
     }
 
     render() {
         return (
             <div className  = 'searchResults'>
-                <a href  = ''>"brief_title"</a>
-                <p>Description: "brief_description"</p>
-                <p>Principal Investigator: "principal_investigator"</p>
-                <p>Lead Organization: "lead_org"</p>
-                <p>Start Date: "start_date"</p>
+
+                {this._getJSXArray(this.state.trialArray)}
+
+            </div>
+        )
+    }
+}
+
+class Trial extends React.Component {
+    constructor(props) {
+        super(props)
+        console.log('trial props', props)
+
+        this.state = {
+            trialModel: props.trialModel
+        }
+        console.log(this.state)
+    }
+
+
+
+    render() {
+        return (
+            <div className = 'trial'>
+                <a href  = ''>{this.state.trialModel.brief_title}</a>
+                <p>Description: {this.state.trialModel.brief_description}</p>
+                <p>Principal Investigator: {this.state.trialModel.principal_investigator}</p>
+                <p>Lead Organization: {this.state.trialModel.lead_org}</p>
+                <p>Start Date: {this.state.trialModel.start_date}</p>
+                <hr />
             </div>
         )
     }
