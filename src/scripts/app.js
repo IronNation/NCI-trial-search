@@ -50,7 +50,7 @@ const app = function() {
                     _fulltext: cancer
                 }
             }).then(() => {
-                ReactDOM.render(<SearchView searchTrialColl = {searchTrialColl}/>, document.querySelector('.container'))
+                ReactDOM.render(<SearchResultsView searchTrialColl = {searchTrialColl}/>, document.querySelector('.container'))
             })
         },
 

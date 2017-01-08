@@ -5,6 +5,10 @@ class SearchResultsView extends React.Component {
 
     constructor(props) {
         super(props)
+<<<<<<< HEAD
+=======
+        console.log(props.searchTrialColl.models[0].get('trials'))
+>>>>>>> views
         this.state = {
             trials: props.searchTrialColl.models[0].get('trials')
         }
@@ -12,42 +16,41 @@ class SearchResultsView extends React.Component {
 
     render() {
         return (
-            <div className = 'searchView'>
+            <div className = 'searchResultsView'>
                 <Header />
-                <SearchResultsBody />
-                <SearchResults trial = {this.state.trials}/>
+                <AllResults trial = {this.state.trials}/>
             </div>
         )
     }
 }
 
-class SearchResultsBody extends React.Component {
+// class SearchBody extends React.Component {
 
-    _handleSearch(evt) {
-        evt.preventDefault()
-        location.hash = 'search/' + evt.target.cancerType.value.split(' ').join('%20')
-        console.log(location.hash)
-    }
+//     _handleSearch(evt) {
+//         evt.preventDefault()
+//         location.hash = 'searchResults/' + evt.target.cancerType.value
+//         console.log(location.hash)
+//     }
 
-    render() {
-        return (
-            <form className = 'searchBody' onSubmit = {this._handleSearch}>
-                <input type = 'text' name = 'cancerType' placeholder = 'Cancer Type' />
-                <input type = 'text' placeholder = 'Cancer Stage' />
-                <input type = 'number' placeholder = 'Your age' />
-                <p>Location:</p>
-                <input type = 'text' placeholder = 'City'/>
-                <input type = 'text' placeholder = 'State'/>
-                <p>Gender:</p>
-                <input type = 'radio' name = 'gender' value = 'female' />Female
-                <input type = 'radio' name = 'gender' value = 'male' />Male
-                <button type = 'submit'>Search</button>
-            </form>
-        )
-    }
-}
+//     render() {
+//         return (
+//             <form className = 'searchBody' onSubmit = {this._handleSearch}>
+//                 <input type = 'text' name = 'cancerType' placeholder = 'Cancer Type' />
+//                 <input type = 'text' placeholder = 'Cancer Stage' />
+//                 <input type = 'number' placeholder = 'Your age' />
+//                 <p>Location:</p>
+//                 <input type = 'text' placeholder = 'City'/>
+//                 <input type = 'text' placeholder = 'State'/>
+//                 <p>Gender:</p>
+//                 <input type = 'radio' name = 'gender' value = 'female' />Female
+//                 <input type = 'radio' name = 'gender' value = 'male' />Male
+//                 <button type = 'submit'>Search</button>
+//             </form>
+//         )
+//     }
+// }
 
-class SearchResults extends React.Component {
+class AllResults extends React.Component {
 
     constructor(props) {
         super(props)
