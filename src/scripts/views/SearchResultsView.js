@@ -5,10 +5,10 @@ class SearchResultsView extends React.Component {
 
     constructor(props) {
         super(props)
-<<<<<<< HEAD
-=======
+
+
         console.log(props.searchTrialColl.models[0].get('trials'))
->>>>>>> views
+
         this.state = {
             trials: props.searchTrialColl.models[0].get('trials')
         }
