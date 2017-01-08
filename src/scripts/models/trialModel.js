@@ -13,6 +13,6 @@ export const TrialModel = Backbone.Model.extend({
 })
 
 export const TrialCollection = Backbone.Collection.extend({
-    url: 'https://clinicaltrialsapi.cancer.gov/v1/clinical-trials/',
+    url: 'https://clinicaltrialsapi.cancer.gov/v1/clinical-trials',
     model: TrialModel
 })

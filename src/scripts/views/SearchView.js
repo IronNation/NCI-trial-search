@@ -5,7 +5,6 @@ class SearchView extends React.Component {
 
     constructor(props) {
         super(props)
-
         this.state = {
             trials: props.trialColl.models[0].get('trials')
         }
@@ -26,7 +25,7 @@ class SearchBody extends React.Component {
 
     _handleSearch(evt) {
         evt.preventDefault()
-        location.hash = 'search/' + evt.target.cancerType.value.split(' ').join('%20')
+        location.hash = 'searchResults/' + evt.target.cancerType.value
         console.log(location.hash)
     }
 
