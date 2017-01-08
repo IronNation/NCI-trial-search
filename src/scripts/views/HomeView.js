@@ -1,5 +1,6 @@
 import Header from './header'
 import React from 'react'
+import {ResultsList} from './map'
 
 class HomeView extends React.Component {
 
@@ -8,6 +9,7 @@ class HomeView extends React.Component {
             <div className = 'homeView'>
                 <Header />
                 <Home />
+                <ResultsList />
             </div>
         )
     }

@@ -1,8 +1,8 @@
 import Backbone from 'backbone'
 
 export const TrialModel = Backbone.Model.extend({
-    url: 'https://clinicaltrialsapi.cancer.gov/v1/clinical-trials',
-    idAttribute: 'id',
+    url: 'https://clinicaltrialsapi.cancer.gov/v1/clinical-trials/',
+    idAttribute: 'nct_id',
     defaults: {
         'saved': false
     }

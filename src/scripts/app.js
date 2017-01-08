@@ -11,6 +11,7 @@ import {TrialModel, TrialCollection} from './models/trialModel'
 
 const app = function() {
 
+
     const AppRouter = Backbone.Router.extend({
 
         routes: {

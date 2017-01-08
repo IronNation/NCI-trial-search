@@ -49,10 +49,12 @@
     "body-parser": "^1.15.2",
     "ejs": "^2.4.2",
     "express": "^4.14.0",
+    "google-maps-react": "^1.0.19",
     "jquery": "^3.0.0",
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
     "react": "^15.1.0",
-    "react-dom": "^15.1.0"
+    "react-dom": "^15.1.0",
+    "react-gmaps": "^1.5.0"
   }
 }

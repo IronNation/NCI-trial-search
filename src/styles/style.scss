@@ -38,8 +38,10 @@ html {
 .trial {
 
     .titleDetails {
-
         cursor: pointer;
+    }
+
+    .titleDetails:hover {
         text-decoration: underline;
     }
 }
