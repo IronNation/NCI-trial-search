@@ -3,6 +3,11 @@ import React from 'react'
 
 class SearchView extends React.Component {
 
+    constructor(props) {
+        super(props)
+        console.log('props in SearchView', props)
+    }
+
     render() {
         return (
             <div className = 'searchView'>
@@ -14,6 +19,11 @@ class SearchView extends React.Component {
 }
 
 class SearchBody extends React.Component {
+
+    constructor(props) {
+        super(props)
+        console.log('props in SearchBody', props)
+    }
 
     render() {
         return (

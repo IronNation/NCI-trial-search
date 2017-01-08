@@ -7,6 +7,7 @@ import SearchView from './views/SearchView'
 import SearchResultsView from './views/SearchResultsView'
 import TrialDetailsView from './views/TrialDetailsView'
 import MyTrialsView from './views/MyTrialsView'
+import {TrialModel, TrialCollection} from './models/trialModel'
 
 const app = function() {
 
@@ -32,7 +33,11 @@ const app = function() {
         },
 
         _goToSearch: function() {
-            ReactDOM.render(<SearchView />, document.querySelector('.container'))
+            const trialColl = new TrialCollection()
+
+            trialColl.fetch().then(() => {
+                ReactDOM.render(<SearchView trialColl = {trialColl}/>, document.querySelector('.container'))
+            })
         },
 
         _goToSearchResults: function() {
