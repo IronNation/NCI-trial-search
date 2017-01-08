@@ -1,38 +1,31 @@
-#TIY Starter Kit
+#Cancer Clinical Drug Trial Search Tool
 
-Lightweight scaffolding and build tools to quickly and easily develop a web application. 
+Lightweight scaffolding and build tools to quickly and easily develop a web application.
 
   - transpiles scss into css
   - transpiles es6 and jsx into es5
   - concatenates all required/imported modules together into one minified file
   - runs a simple express server that is deployable on heroku
-  
-##Getting started
 
-  - clone this repo with `git clone git@github.com:magentanova/tiy-starter-kit.git THE-LOCAL-FOLDER-YOU-WANT-TO-CREATE`
-  - `cd` into the local folder
-  - disconnect from my remote repo and point to your own (see [Publishing](#publishing))
-  - `npm install`
-  - `npm run go`
-  - that's it! visit [http://localhost:3000](http://localhost:3000) to make sure it's working
-  
-##Workflow
-  
-  - you'll *only* write code in the files in the `src/` folder
-  - every time you save in that folder, your code will be read and transpiled into the `dist/` folder. only files in `dist/` will be served up to the browser.
-  - view and test your app at [http://localhost:3000](http://localhost:3000)
-  
-##Publishing
+##Community
 
-  - disconnect your local repo from this one with `git remote remove origin`
-  - `hub create YOUR-APP-NAME` -- this will simultaneously (1) create you a remote repo with the given name and (2) create a local reference connecting the directory you're in to the remote you just created
-  - add, commit and push per usual
+    - So this tool addresses the problem that people with cancer do not always know the clinical drug trials available to participate in. Here a user can search by a few key features about them and their cancer to find studies the user may be eleigible for.
 
-##Deploying 
+##Tech Stack
+    - This is app uses Backbone.js to handle the models and controller, and Backbone.js to render the views. The data is retrieved using the [https://clinicaltrialsapi.cancer.gov/v1/](National Cancer Institute Beta API)
 
-The easiest thing to do is deploy to heroku. Once you have an account and you've installed the heroku command line tools, simply run: 
- 
-  - `heroku create YOUR-APP-NAME`
-  - `git push heroku master`
+##Creativity
+    -Since this is a beta API it is obvious that there aren't too many tools like this out there already. Patients rely on this kind of information from their oncologists and really have no idea how to begin finding this data.
 
-Have fun!
+##Team
+    -Caitlin Flattery
+    -Sam Pellegrene
+    -Emily Wivell
+    -James O'Connor
+    -Matt Zwick
+    -Jenessa White
+    -Justin Richards (provided boilerplate)
+
+##Deploying
+    - [https://nci-drug-trial-search.herokuapp.com/](Here)
+    -The user will start on the landing page and then click on the search button in the tool bar. They will see a list of all the trials available and a form to input their information to narrow it down to relevant drug trials.
