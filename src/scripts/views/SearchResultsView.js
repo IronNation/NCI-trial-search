@@ -5,7 +5,6 @@ class SearchResultsView extends React.Component {
 
     constructor(props) {
         super(props)
-        console.log(props)
         this.state = {
             trials: props.searchTrialColl.models[0].get('trials')
         }

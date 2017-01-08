@@ -41,7 +41,7 @@ class ResultsList extends Component {
 class MapList extends Component {
     constructor(props) {
         super(props)
-        console.log(props)
+        // console.log(props)
     }
 
     render() {
