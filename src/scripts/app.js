@@ -48,7 +48,7 @@ const app = function() {
             const trialModel = new TrialModel(id)
 
             trialModel.fetch().then(() => {
-                ReactDOM.render(<TrialDetailsView />, document.querySelector('.container'))
+                ReactDOM.render(<TrialDetailsView trialModel = {trialModel}/>, document.querySelector('.container'))
             })
         },
 
